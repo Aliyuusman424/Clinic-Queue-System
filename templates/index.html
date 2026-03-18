@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clinic Queue</title>
+</head>
+<body>
+
+    <h1>Clinic Queue System</h1>
+
+    <a href="/add">Add Patient</a> |
+    <a href="/serve">Serve Next Patient</a>
+
+    <h2>Waiting List</h2>
+
+    <ul>
+        {% for patient in patients %}
+            <li>{{ patient.name }} - {{ patient.time.strftime('%H:%M:%S') }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Total Patients Served Today: {{ total }}</h3>
+
+</body>
+</html>
