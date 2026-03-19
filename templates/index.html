@@ -2,19 +2,23 @@
 <html>
 <head>
     <title>Clinic Queue</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
     <h1>Clinic Queue System</h1>
 
-    <a href="/add">Add Patient</a> |
+    <a href="/add">Register Patient</a> |
     <a href="/serve">Serve Next Patient</a>
 
     <h2>Waiting List</h2>
 
     <ul>
         {% for patient in patients %}
-            <li>{{ patient.name }} - {{ patient.time.strftime('%H:%M:%S') }}</li>
+        <li>
+            <strong>{{ patient.name }}</strong><br>
+            <small>Time: {{ patient.time.strftime('%H:%M:%S') }}</small>
+        </li>
         {% endfor %}
     </ul>
 
